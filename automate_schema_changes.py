@@ -6,7 +6,7 @@ connection = mysql.connector.connect(
     host='db-rcha5267.mysql.database.azure.com',  
     user='rootdb',  
     password='Secret55',  
-    database='db1'
+    database='companydb'
 )
 
 
