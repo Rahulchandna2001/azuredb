@@ -1,7 +1,9 @@
 import mysql.connector
 from mysql.connector import Error
 
-def execute_sql_script(main):
+def execute_sql_script(azuredb
+/update_companydb_schema.sql
+):
     try:
         # Connect to the MySQL database
         connection = mysql.connector.connect(
