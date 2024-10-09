@@ -1,7 +1,7 @@
 import mysql.connector
 from mysql.connector import Error
 
-def execute_sql_script(update_companydb_schema.sql):
+def execute_sql_script(main):
     try:
         # Connect to the MySQL database
         connection = mysql.connector.connect(
