@@ -2,7 +2,7 @@ import mysql.connector
 from mysql.connector import Error
 import os
 
-def execute_sql_script(sql_file_path):
+def execute_sql_script(azuredb/update_companydb_schema.sql):
     try:
         # Connect to the MySQL database using secrets stored in environment variables
         connection = mysql.connector.connect(
