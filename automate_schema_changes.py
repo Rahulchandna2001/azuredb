@@ -1,7 +1,7 @@
 import mysql.connector
 from mysql.connector import Error
 
-def execute_sql_script():
+def execute_sql_script(update_companydb_schema.sql):
     try:
         # Connect to the MySQL database
         connection = mysql.connector.connect(
@@ -35,4 +35,4 @@ def execute_sql_script():
             connection.close()
 
 if __name__ == '__main__':
-    execute_sql_script('update_projects_schema.sql')
+    execute_sql_script('update_companydb_schema.sql')
