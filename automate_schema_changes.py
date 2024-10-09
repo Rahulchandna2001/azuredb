@@ -1,32 +1,38 @@
 import mysql.connector
 from mysql.connector import Error
 
-# Create the database connection directly
-  connection = mysql.connector.connect(
-    DB_HOST: ${{ secrets.DB_HOST }}
-    DB_USER: ${{ secrets.DB_ADMIN_USER }}
-    DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-    DB_NAME: ${{ secrets.DB_NAME }}
-)
+def execute_sql_script():
+    try:
+        # Connect to the MySQL database
+        connection = mysql.connector.connect(
+            host='your-host',
+            database='your-database',
+            user='your-username',
+            password='your-password'
+        )
+        
+        if connection.is_connected():
+            cursor = connection.cursor()
 
+            # Open and read the SQL file
+            with open(sql_file_path, 'r') as sql_file:
+                sql_script = sql_file.read()
 
-# Create a cursor object to execute SQL queries
-cursor = connection.cursor() 
+            # Execute each command in the script
+            for command in sql_script.split(';'):
+                if command.strip():
+                    cursor.execute(command)
 
-# Path to the SQL file
-script_path = 'update_companydb_schema.sql'
+            # Commit the changes
+            connection.commit()
+            print("Schema changes applied successfully.")
 
-# Read the SQL script from the file
-with open(script_path, 'r') as file:
-    sql_script = file.read()
+    except Error as e:
+        print(f"Error: {e}")
+    finally:
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
 
-# Execute each SQL statement individually (split by semicolon)
-for statement in sql_script.split(';'):
-    if statement.strip():  # Execute only non-empty statements
-       cursor.execute(statement)
-
-connection.commit()  # Commit all changes at once
-cursor.close()  # Close the cursor
-connection.close()  # Close the connection
-
-print("Execution completed successfully")
+if __name__ == '__main__':
+    execute_sql_script('update_projects_schema.sql')
