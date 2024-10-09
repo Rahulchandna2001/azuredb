@@ -37,4 +37,4 @@ def execute_sql_script(sql_file_path):
 
 if __name__ == '__main__':
     # Provide the correct SQL file path
-    execute_sql_script('azuredb/update_companydb_schema.sql')
+    execute_sql_script('update_companydb_schema.sql')
