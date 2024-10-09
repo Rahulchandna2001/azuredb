@@ -9,11 +9,11 @@ from mysql.connector import Error
     password='Secret55',  
     database='companydb'
 )
-"""
+
 
 # Create a cursor object to execute SQL queries
 cursor = connection.cursor() 
-
+"""
 # Path to the SQL file
 script_path = 'update_projects_schema.sql'
 
