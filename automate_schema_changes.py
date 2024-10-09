@@ -1,14 +1,15 @@
 import mysql.connector
 from mysql.connector import Error
 
+"""
 # Create the database connection directly
-connection = mysql.connector.connect(
-    host='db-rcha5267.mysql.database.azure.com',  
+#connection = mysql.connector.connect(
+   # host='db-rcha5267.mysql.database.azure.com',  
     user='rootdb',  
     password='Secret55',  
     database='companydb'
 )
-
+"""
 
 # Create a cursor object to execute SQL queries
 cursor = connection.cursor() 
