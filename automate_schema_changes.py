@@ -26,7 +26,8 @@ with open(script_path, 'r') as file:
 # Execute each SQL statement individually (split by semicolon)
 for statement in sql_script.split(';'):
     if statement.strip():  # Execute only non-empty statements
-       """ cursor.execute(statement)
+       """ 
+       cursor.execute(statement)
 
 connection.commit()  # Commit all changes at once
 cursor.close()  # Close the cursor
