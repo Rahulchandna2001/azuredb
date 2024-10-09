@@ -2,7 +2,7 @@ import mysql.connector
 from mysql.connector import Error
 import os
 
-def execute_sql_script(azuredb/update_companydb_schema.sql):
+def execute_sql_script(sql_file_path):
     try:
         # Connect to the MySQL database using secrets stored in environment variables
         connection = mysql.connector.connect(
@@ -36,5 +36,5 @@ def execute_sql_script(azuredb/update_companydb_schema.sql):
             connection.close()
 
 if __name__ == '__main__':
-    # Provide the correct SQL file path when calling the function
+    # Provide the correct SQL file path
     execute_sql_script('azuredb/update_companydb_schema.sql')
