@@ -1,25 +1,10 @@
--- Create departments table
-CREATE TABLE IF NOT EXISTS departments (
-    department_id INT AUTO_INCREMENT PRIMARY KEY,
-    department_name VARCHAR(255) NOT NULL,
-    location VARCHAR(255)
+-- Create a new table 'projects'
+CREATE TABLE IF NOT EXISTS projects (
+    project_id INT AUTO_INCREMENT PRIMARY KEY,
+    project_name VARCHAR(255) NOT NULL,
+    start_date DATE,
+    end_date DATE
 );
 
--- Insert sample data into departments table
-INSERT INTO departments (department_name, location)
-VALUES ('HR', 'New York'), ('Engineering', 'San Francisco');
-
--- Create employees table
-CREATE TABLE IF NOT EXISTS employees (
-    employee_id INT AUTO_INCREMENT PRIMARY KEY,
-    employee_name VARCHAR(255) NOT NULL,
-    department_id INT,
-    hire_date DATE,
-    FOREIGN KEY (department_id) REFERENCES departments(department_id)
-);
-
--- Update location column in departments table
-ALTER TABLE departments MODIFY COLUMN location VARCHAR(100);
-
--- Delete a department by department_id
-DELETE FROM departments WHERE department_id = 1;
+-- Add a new column 'budget' to the 'projects' table
+ALTER TABLE projects ADD COLUMN budget DECIMAL(10, 2);
