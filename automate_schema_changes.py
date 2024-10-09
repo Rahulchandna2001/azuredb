@@ -14,7 +14,7 @@ from mysql.connector import Error
 cursor = connection.cursor() 
 
 # Path to the SQL file
-script_path = 'update_projects_schema.sql'
+script_path = 'update_companydb_schema.sql'
 
 # Read the SQL script from the file
 with open(script_path, 'r') as file:
