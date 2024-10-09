@@ -3,10 +3,10 @@ from mysql.connector import Error
 
 # Create the database connection directly
   connection = mysql.connector.connect(
-    host=${{ secrets.DB_HOST }},  
-    user=${{ secrets.DB_ADMIN_USER }},  
-    password=${{ secrets.DB_PASSWORD }},  
-    database=${{ secrets.DB_NAME }}
+    DB_HOST: ${{ secrets.DB_HOST }}
+    DB_USER: ${{ secrets.DB_ADMIN_USER }}
+    DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+    DB_NAME: ${{ secrets.DB_NAME }}
 )
 
 
